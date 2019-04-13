@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Podcast Highlights</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style type="text/css">
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .margin-base-vertical {
+            font-size: 60px;
+			margin: 40px 0;
+		}
+
+     
+      p {
+        
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .upload{
+          margin-top: 35px;
+          margin-bottom: 35px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class = "row center">
+                <div class="margin-base-vertical">Podcast Highlights</div>
+        </div>
+      <div class="row ">
+        <div class="col-md-6 center">
+          <div class=" card " style="width: 24rem;">
+            <img
+              class="card-img-top"
+              src="https://media.npr.org/images/podcasts/primary/icon_381444650-04c1bad8586e69edf04b78ea319846614c4a6a6b.png?s=1400"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">This American Life</h5>
+              <p class="card-text">
+                A weekly public radio program and podcast. Each week we choose a
+                theme and put together different kinds of stories on that theme.
+              </p>
+              <a href="/podcast" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 center">
+          <div class="card" style="width: 24rem;">
+            <img
+              class="card-img-top"
+              src="https://static.megaphone.fm/podcasts/f23b021e-a9a3-11e5-8768-bfc7a8ea314d/image/uploads_2F1517245218052-chutdg7xnlh-a4988f407d3afb297332b6e225d69283_2F20171116_StartUp-ShowCover.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Startup Podcast</h5>
+              <p class="card-text">
+                StartUp is an American podcast from Gimlet Media hosted by Alex
+                Blumberg and Lisa Chow. While the first two seasons follow
+                stories of starting businesses
+              </p>
+              <a href="/podcast" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class = "row center">
+        <a  href="/upload" class="btn btn-primary upload">Upload Hightlights</a>
+      </div>
+    </div>
+  </body>
+</html>
