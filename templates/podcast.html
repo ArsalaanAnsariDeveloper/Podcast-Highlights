@@ -1,90 +1,104 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Startup Podcast Highlights</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <style type="text/css">
-      .center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
-      .margin-base-vertical {
-        font-size: 60px;
-        margin: 40px 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Startup Podcast Highlights</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <style type="text/css">
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      p {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
+    .margin-base-vertical {
+      font-size: 60px;
+      margin: 40px 0;
+    }
 
-      .tag {
-        font-size: 30px;
-      }
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
-      hr {
-        border: 1px inset;
-      }
+    .tag {
+      font-size: 30px;
+    }
 
-      .secondary{
-          margin-top: 20px;
-      }
+    hr {
+      border: 1px inset;
+    }
 
-      .related-space{
-          margin-top : 25px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row center">
-        <div class="margin-base-vertical">Startup Podcast Highlights</div>
-      </div>
-      <div class="row ">
-        <div class="col-md-12">
-          <div class="tag">Most Viewed Highlights</div>
-          <hr />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 center">
-          <audio controls>
-            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="col-md-6 center">
-          <audio controls>
-            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-      <div class="row secondary">
-        <div class="col-md-6 center">
-          <audio controls>
-            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="col-md-6 center">
-          <audio controls>
-            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
-          </audio>
-        </div>
-        
-      </div>
-      <div class="row related-space ">
-            <div class="col-md-12">
-              <div class="tag">Related Podcasts</div>
-              <hr />
-            </div>
-      
+    .secondary {
+      margin-top: 20px;
+    }
+
+    .related-space {
+      margin-top: 25px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'podcast.js') }}"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row center">
+      <div class="margin-base-vertical">Startup Podcast Highlights</div>
     </div>
-  </body>
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="tag">Most Viewed Highlights</div>
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 center">
+        <div>
+          <audio controls>
+            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
+          </audio>
+          <div>Startup Highlight 1</div>
+        </div>
+      </div>
+      <div class="col-md-6 center">
+        <div>
+          <audio controls>
+            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
+          </audio>
+          <div>Startup Highlight 2</div>
+        </div>
+      </div>
+    </div>
+    <div id = "static" class="row secondary">
+      <div class="col-md-6 center">
+        <div>
+          <audio controls>
+            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
+          </audio>
+          <div>Startup Highlight 3</div>
+        </div>
+
+      </div>
+      <div   class="col-md-6 center">
+        <div>
+          <audio controls>
+            <source src="https://s3.amazonaws.com/ui-podcast-bucket/PinkPanther30.wav" type="audio/wav">
+          </audio>
+          <div>Startup Highlight 4</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row related-space ">
+      <div class="col-md-12">
+        <div class="tag">Related Podcasts</div>
+        <hr />
+      </div>
+
+    </div>
+</body>
+
 </html>

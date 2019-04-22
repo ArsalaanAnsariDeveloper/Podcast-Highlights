@@ -4,17 +4,7 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 
-current_id = 2
-data = [
-    {
-        "id": 1,
-        "name": "michael scott"
-    },
-    {
-        "id": 2,
-        "name": "jim halpert"
-    },
-]
+data = []
 
 
 
@@ -64,9 +54,29 @@ def podcast():
 @app.route('/upload', methods=['GET'])
 def upload():
     return render_template('upload.html')
-    
 
 
+@app.route('/upload_podcast', methods=['POST'])
+def upload_podcast():
+
+    global data 
+    json_data = request.form 
+    print(json_data)
+    data.append(json_data)
+
+
+    return jsonify(data = data)
+
+
+@app.route('/get_podcast', methods=['GET'])
+def get_podcast():
+
+    global data
+
+    if(len(data) >0 ):
+        return jsonify(data = data[-1])
+    else:
+        return jsonify(data = "")
 
 
 

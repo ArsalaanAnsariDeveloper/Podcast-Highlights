@@ -1,89 +1,107 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Upload</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <style type="text/css">
-      .center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
-      .margin-base-vertical {
-        font-size: 60px;
-        margin: 40px 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+  <style type="text/css">
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      p {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
+    .margin-base-vertical {
+      font-size: 60px;
+      margin: 40px 0;
+    }
 
-      .tag {
-        font-size: 30px;
-      }
+    p {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
-      hr {
-        border: 1px inset;
-      }
+    .tag {
+      font-size: 30px;
+    }
 
-      .secondary{
-          margin-top: 20px;
-      }
+    hr {
+      border: 1px inset;
+    }
 
-      .related-space{
-          margin-top : 25px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row center">
-        <div class="margin-base-vertical">Upload Podcast Highlights</div>
+    .secondary {
+      margin-top: 20px;
+    }
+
+    .related-space {
+      margin-top: 25px;
+    }
+  </style>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'upload.js') }}"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row center">
+      <div class="margin-base-vertical">Upload Podcast Highlights</div>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">@</span>
       </div>
-                <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">@</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
-                      </div>
-                      
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="basic-addon2">@example.com</span>
-                        </div>
-                      </div>
-                      
-                    
-                      
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Description</span>
-                        </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                      </div>
+      <input type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
 
-                      <div class="input-group secondary">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                            </div>
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                            </div>
-                          </div>
-          
-     
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+      </div>
+    </div>
+
+
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+
+    <div class="input-group secondary">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </div>
+
+    <div  id = "select_form" class="row center secondary">
+      <form>
+        <div>Select Podcast Episode:</div>
+        <select name="cars">
+          <option value="se1">Startup Episode 1</option>
+          <option value="se2">Startup Episode 2</option>
+          <option value="tal1">This American Life Episode 1</option>
+          <option value="tal2">This American Life Episode 2</option>
+        </select>
         
-      </div>
+      </form>
+      <button id = "submit_podcast"> Submit</button>
       
-  </body>
+    </div>
+    <div id = "content" ></div>
+
+
+
+  </div>
+
+</body>
+
 </html>
