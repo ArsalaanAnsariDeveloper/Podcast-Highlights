@@ -1,10 +1,13 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
+from pydub import AudioSegment
 app = Flask(__name__)
 
 
 data = []
+
+fullPodcasts =  {"Startup Podcast Episode 1": "https://s3.amazonaws.com/ui-podcast-bucket/startupEpisode1.mp3", "Startup Podcast Episode 2": "https://s3.amazonaws.com/ui-podcast-bucket/startupEpisode2.mp3", "This American Life Episode 1": "https://s3.amazonaws.com/ui-podcast-bucket/talEpisode1.mp3", "This American Life Episode 2": "https://s3.amazonaws.com/ui-podcast-bucket/talEpisode2.mp3"}
 
 
 
@@ -17,7 +20,15 @@ def hello(name=None):
 @app.route('/people')
 def people(name=None):
     return render_template('people.html', data=data)  
+
+@app.route('/cut')
+def cut():
+    return render_template('example-2.html')
     
+@app.route('/f_episodes')
+def f_episodes():
+    global fullPodcasts
+    return jsonify(data = fullPodcasts)
 
 
 @app.route('/add_name', methods=['GET', 'POST'])

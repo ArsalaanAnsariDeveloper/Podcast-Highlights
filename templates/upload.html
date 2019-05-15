@@ -3,9 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <title>Upload</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'cut.css') }}">
+
   <style type="text/css">
+    .dark input.submit.disabled {
+      color: grey;
+    }
+
+    label {
+      display: block;
+      line-height: 1.8em;
+    }
+
+    label .name {
+      display: inline-block;
+      width: 170px;
+      text-align: right;
+      padding-right: .5em;
+    }
+
+    label .value {
+      width: 50%;
+      display: inline-block;
+    }
+
+    .wavesurfer-handle {
+      width: 10px !important;
+      max-width: none !important;
+      margin-left: -10px;
+    }
+
     .center {
       display: flex;
       align-items: center;
@@ -42,7 +71,10 @@
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename = 'upload.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'wavesurfer.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'wavesurfer.regions.min.js') }}"></script>
 </head>
+
 
 <body>
   <div class="container">
@@ -56,14 +88,6 @@
       <input type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <span class="input-group-text" id="basic-addon2">@example.com</span>
-      </div>
-    </div>
-
-
 
     <div class="input-group">
       <div class="input-group-prepend">
@@ -72,31 +96,43 @@
       <textarea class="form-control" aria-label="With textarea"></textarea>
     </div>
 
-    <div class="input-group secondary">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-      </div>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-      </div>
-    </div>
 
-    <div  id = "select_form" class="row center secondary">
+
+    <div id="select_form" class="row center secondary">
       <form>
         <div>Select Podcast Episode:</div>
-        <select name="cars">
-          <option value="se1">Startup Episode 1</option>
-          <option value="se2">Startup Episode 2</option>
-          <option value="tal1">This American Life Episode 1</option>
-          <option value="tal2">This American Life Episode 2</option>
+        <select id = "epDrop" name="Episodes">
         </select>
-        
+
       </form>
-      <button id = "submit_podcast"> Submit</button>
-      
+
     </div>
-    <div id = "content" ></div>
+    <div class="row center">
+
+
+
+      <div style="min-width: 600px; max-width: 800px; margin: auto;">
+        <div id="waveform"></div>
+        <label>
+          <span class="name">Song length</span>
+          <span id="song-length" class="value"></span>
+        </label>
+        <label>
+          <span class="name">Selected region length</span>
+          <span id="region-length" class="value"></span>
+        </label>
+        <input type="button" id="btn-play" class="submit" value="Play">
+        <input type="button" id="btn-pause" class="submit disabled" value="Pause">
+        <input type="button" id="btn-stop" class="submit" value="Stop">
+        <input type="button" id="btn-save" class="submit" value="Save">
+      </div>
+
+    </div>
+    <div class="row center secondary">
+      <button id="upload"> Upload</button>
+    </div>
+
+    <div id="content"></div>
 
 
 
